@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="utf-8">
+    <title>Новости</title>
+</head>
+<body>
+<div>
+    <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+    <h2>Новости <br> Только для залогинившихся пользователей.</h2>
+    <a href="/">Главная</a>
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Выйти"/>
+        </form>
+</div>
+</body>
+</html>
